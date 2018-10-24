@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>系统内部错误</title>
+    <link rel="shortcut icon" href="//a.zbjimg.com/static/djy-www/common/default/favicon.ico" type="image/x-icon"/>
+    <meta name="keywords" content="八戒知识产权"/>
+    <meta name="description" content="八戒知识产权"/>
+    <meta name="sogou_site_verification" content="FZAELF2JN9"/>
+    <meta name="360-site-verification" content="2d807cc45e42665e812d541bfb06ef01" />
+    <meta name="baidu-site-verification" content="IppzFTTD31" />
+    <link rel="canonical" href=""/>
+    <style type="text/css">
+        .djy-page500 {
+            text-align: center;
+            color: #666;
+        }
+        .djy-page500 h2{
+            font-size: 22px;
+        }
+        .djy-page500 a{
+            font-size: 16px;
+            color: #216dd5;
+        }
+        .error-message {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="djy-page500">
+        <img src="{{mapNode "common-djy-pc:/error/img/500.png"}}" align="系统内部错误" />
+        <h2>很抱歉，此页面内部错误！</h2>
+        <h3>正在殴打程序猿，将尽快恢复.</h3>
+        <a href="//djy.jlgl.com/"><b>返回首页</b></a>
+        {{#if sids}}
+            {{#each sids}}
+            <div class="error-message">错误信息：{{this}}</div>
+            {{/each}}
+        {{/if}}
+    </div>
+</body>
+</html>

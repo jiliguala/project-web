@@ -1,0 +1,16 @@
+{{#if config.runtime}}
+    <script id="seajsnode" type="text/javascript" src="{{config.staticURI}}/??/as-common/lib/jquery/jquery171.js,/as-common/lib/seajs/seajs/2.1.1/sea-debug.js,/as-common/lib/seajs/seajs-style/1.0.0/seajs-style-debug.js,/as-common/lib/seajs/seajs-text/1.0.3/seajs-text-debug.js"></script>
+{{else}}
+    <script id="seajsnode" type="text/javascript" src="{{config.staticURI}}/??/as-common/lib/jquery/jquery171.js,/as-common/lib/seajs/seajs/2.1.1/sea-debug.js,/as-common/lib/seajs/seajs-combo/1.0.1/seajs-combo-debug.js,/as-common/lib/seajs/seajs-style/1.0.0/seajs-style-debug.js,/as-common/lib/seajs/seajs-text/1.0.3/seajs-text-debug.js"></script>
+{{/if}}
+<script type="text/javascript">
+(function () {
+    // 设置csrf token及异步配置
+    $.ajaxSetup({
+        headers: {
+            'csrf-token': '{{{_CSRF}}}'
+        },
+        dataType: 'json'
+    });
+})();
+</script>

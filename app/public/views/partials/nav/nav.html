@@ -1,0 +1,56 @@
+<div class="djy-nav">
+	<div class="djy-wrap">
+		<div class="nav-list">
+			{{#each config.commonCmsDataNew.nav.list}}
+			{{#gt 10 @index}}
+				<a
+					{{#if @last}}class="nav-last"{{/if}}
+					{{#eq comments 'fg'}}data-fg="nav-fg"{{/eq}}
+					{{#eq style ../curNav}}
+						class="active"
+					{{/eq}}
+					{{#if link}}href="{{link}}"{{/if}}
+					{{#if fontColor}}style="color:{{fontColor}}"{{/if}}
+					{{#if linkId}}data-link="{{linkId}}"{{/if}}
+					{{#eq target 8}}target="_blank"{{/eq}}
+					>{{title}}
+					{{#if iconUrl}}<img src="{{iconUrl}}" />{{/if}}
+				</a>
+				{{/gt}}
+			{{/each}}
+		</div>
+		<div class="nav-more">
+			<a href="javascript:;" class="nav-text ">
+				<span class="tit">{{config.commonCmsDataNew.nav-more.title}}</span>
+			</a>
+			<div class="nav-sub">
+				<ul>
+					{{#each config.commonCmsDataNew.nav-more.list}}
+					<li>
+						<a
+							href="{{link}}"
+							title="{{title}}"
+							{{#if linkId}}data-link="{{linkId}}"{{/if}}
+							{{#eq target 8}}target="_blank"{{/eq}}
+							
+							>
+							<img src="{{imgUrl}}" alt="{{alt}}" />
+							<p>{{title}}</p>
+						</a>
+					</li>
+					{{/each}}
+				</ul>
+			</div>
+		</div>
+		{{#if config.commonCmsDataNew.nav-right-adv.imgUrl}}
+		<div class="active-iocn">
+			<a {{#if config.commonCmsDataNew.nav-right-adv.link}}href="{{config.commonCmsDataNew.nav-right-adv.link}}"{{/if}} {{#eq onfig.commonCmsDataNew.nav-right-adv.target 8}}target="_blank"{{/eq}} data-link="2673"><img src="{{config.commonCmsDataNew.nav-right-adv.imgUrl}}"></img></a>
+		</div>
+		{{/if}}
+	</div>
+</div>
+{{#content "js" mode="append"}}
+<script type="text/javascript">
+seajs.use('common-djy-pc:/partials/nav/nav-need.less');
+</script> {{/content}}
+

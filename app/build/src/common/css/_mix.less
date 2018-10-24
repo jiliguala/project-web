@@ -1,0 +1,57 @@
+@import "_variable.less";
+@import "_function.less";
+
+.f(@size) {
+    font-size: unit(@size, px);
+}
+
+.op(@number) {
+    opacity: @number / 100;
+    filter: alpha(opacity=@number);
+}
+
+.tra(@condition) {
+    transition: @condition;
+}
+
+.pre(@style,@value) {
+    -webkit-@{style}: @value;
+       -moz-@{style}: @value;
+        -ms-@{style}: @value;
+         -o-@{style}: @value;
+            @{style}: @value;
+}
+
+.keyframes(@name) {
+    @-webkit-keyframes @name {
+        .-frames(-webkit-)
+    }
+    @-moz-keyframes @name {
+        .-frames(-moz-)
+    }
+    @-o-keyframes @name {
+        .-frames(-o-)
+    }
+    @-ms-keyframes @name {
+        .-frames(-ms-)
+    }
+    @keyframes @name {
+        .-frames()
+    }
+}
+
+.animation(@value) {
+    .pre(animation,@value);
+}
+
+.rotate() {
+    .keyframes(rotate);
+    .-frames(@-...){
+        0%,100%{
+            @{-}transform:rotate(0deg);
+        }
+        100%{
+            @{-}transform:rotate(360deg);
+        }
+    }
+}

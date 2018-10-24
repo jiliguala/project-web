@@ -1,0 +1,45 @@
+{{{mapUse "common-djy-pc:/partials/top/chance/chance.less"}}}
+{{{mapUse "common-djy-pc:/partials/top/chance/chance.js"}}}
+<div class="top-chance">
+    <div class="search-chance" data-today="{{config.caseCountResult.allTotal}}">
+        <div class="chance-cont">
+            <ul data-index="0" class="select-tab clearfix J-select-tab">
+                <li class="top-nav-first active" data-link="2684">商标</li>
+                <li data-link="2710">专利</li>
+                <li data-link="2697">版权</li>
+            </ul>
+            <div class="search-cont">
+                <i></i>
+                <input class="J-top-input" placeholder="请输入商标名称，如八戒知识产权"><button data-link="2695" id="J-top-chance" data-service="1" class="common-chance chance-btn J-top-submit">免费查询能否注册</button>
+                <span class="J-buyBtn-cont top-buy-cont">或
+                <button data-link="2656" data-service="42" class="common-chance top-buy-btn J-top-buy-btn J-top-submit">购买现成商标</button>
+                </span>
+            </div>
+            <div class="top-chance-info">
+                <div class="J-top-info0" {{#if config.commonCmsDataNew.top-chance-trade.description}} data-placeholder="{{config.commonCmsDataNew.top-chance-trade.description}}"{{/if}}>
+                    {{#each config.commonCmsDataNew.top-chance-trade.list}}
+                    <a {{#eq @index 0}}class="top-info-first"{{/eq}} {{#if link}}href="{{link}}"{{/if}} {{#eq target 8}}target="_blank"{{/eq}} {{#if linkId}}data-link="{{linkId}}"{{/if}}>{{title}}</a>
+                    {{/each}}
+                </div>
+                <div class="J-top-info1 djy-hide" {{#if config.commonCmsDataNew.top-chance-patent.description}} data-placeholder="{{config.commonCmsDataNew.top-chance-patent.description}}"{{/if}}>
+                    {{#each config.commonCmsDataNew.top-chance-patent.list}}
+                    <a {{#eq @index 0}}class="top-info-first"{{/eq}} {{#if link}}href="{{link}}"{{/if}} {{#eq target 8}}target="_blank"{{/eq}} {{#if linkId}}data-link="{{linkId}}"{{/if}}>{{title}}</a>
+                    {{/each}}
+                </div>
+                <div class="J-top-info2 djy-hide" {{#if config.commonCmsDataNew.top-chance-copyright.description}} data-placeholder="{{config.commonCmsDataNew.top-chance-copyright.description}}"{{/if}}>
+                    {{#each config.commonCmsDataNew.top-chance-copyright.list}}
+                    <a {{#eq @index 0}}class="top-info-first"{{/eq}} {{#if link}}href="{{link}}"{{/if}} {{#eq target 8}}target="_blank"{{/eq}} {{#if linkId}}data-link="{{linkId}}"{{/if}}>{{title}}</a>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="djy-qimoor-block djy-hide">
+    <div class="djy-corner-btn">
+        <span class="djy-chat-close" id="djy-chat-close"></span>
+        <span class="djy-chat-min" id="djy-chat-min"></span>
+        <span class="djy-chat-voice" id="djy-chat-voice"></span>
+    </div>
+    <iframe src="" class="J-online-block" width="100%" height="100%"></iframe>
+</div>

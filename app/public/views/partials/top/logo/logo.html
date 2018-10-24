@@ -1,0 +1,20 @@
+{{{mapUse "common-djy-pc:/partials/top/logo/logo.less"}}}
+<div class="nav-logo">
+    <a class="logo" href="//djy.{{config.baseURI}}/" title="猪八戒知识产权">
+        <img src="{{mapNode "common-djy-pc:/partials/top/logo/img/logo.png"}}" alt="知识产权" />
+    </a>
+    <a
+        class="activity"
+        href="{{config.commonCmsDataNew.logo-right-ad.link}}"
+        title="{{config.commonCmsDataNew.logo-right-ad.title}}"
+        {{#if config.commonCmsDataNew.logo-right-ad.linkId}}data-link="{{config.commonCmsDataNew.logo-right-ad.linkId}}"{{/if}}
+        {{#eq config.commonCmsDataNew.logo-right-ad.target 8}}target="_blank"{{/eq}}
+    >
+        <img src="{{config.commonCmsDataNew.logo-right-ad.imgUrl}}" alt="{{config.commonCmsDataNew.logo-right-ad.title}}">
+    </a>
+</div>
+{{#content "js" mode="append"}}
+<script type="text/javascript">
+seajs.use('common-djy-pc:/partials/top/logo/logo.less');
+</script>
+{{/content}}

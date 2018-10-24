@@ -1,0 +1,26 @@
+{{! 其它js可直接放在此文件中}}
+<script type='text/javascript' src='//webchat.7moor.com/javascripts/7moorInit.js?accessId=31d48a00-6a2b-11e7-b8ff-2ddb29790098&autoShow=false' async='async'></script>
+<div class="djy-hide">
+{{#if config.cnzzImageId}}
+<script type="text/javascript">
+window.cnzz_protocol = 'https://';
+document.write(unescape('%3Cspan id="cnzz_stat_icon_1273361763"%3E%3C/span%3E%3Cscript src=' + window.cnzz_protocol + 's13.cnzz.com/z_stat.php%3Fid%3D1273361763%26show%3Dpic1" type="text/javascript"%3E%3C/script%3E'));
+</script>
+{{/if}}
+{{#if config.cnzzScriptId}}
+    <script src="https://s13.cnzz.com/z_stat.php?id={{config.cnzzScriptId}}&web_id={{config.cnzzScriptId}}"></script>
+{{/if}}
+</div>
+{{! 集团埋点GA}} 
+<script type="text/javascript">
+    var date = new Date();
+    //添加时间戳，精确到小时，便于文件更新
+    var timestamp = '' + date.getFullYear() + date.getMonth() + 1 + date.getDate() + date.getHours();
+    var scriptUrl = '//t5.zbjimg.com/t5s/output/common/js/count.js?' + timestamp;
+    var countScript = document.createElement('script');
+    countScript.type = 'text/javascript';
+    countScript.async = 1;
+    countScript.src = scriptUrl;
+    var sourceScript = document.getElementsByTagName('script')[0];
+    sourceScript.parentNode.insertBefore(countScript, sourceScript);
+</script>

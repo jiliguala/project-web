@@ -1,0 +1,7 @@
+{{#mapUse "css"}}
+    {{#each @list}}
+        {{#if uri}}
+            <link rel="stylesheet" type="text/css" href="{{uri}}" />
+        {{/if}}
+    {{/each}}
+{{/mapUse}}

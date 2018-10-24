@@ -1,0 +1,8 @@
+{{! 自动引入页面同名js文件}}
+{{#mapUse "js"}}
+{{#if @listNameStr}}
+<script type="text/javascript">
+seajs.use({{{@listNameStr}}});
+</script>
+{{/if}}
+{{/mapUse}}

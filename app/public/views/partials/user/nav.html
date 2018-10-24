@@ -1,0 +1,56 @@
+<div class="user-sidebar">
+    <div class="inner-link">
+        <h3 class="sider-title">个人中心</h3>
+        <div class="sider-nav">
+            {{#each config.commonCmsDataNew.user-nav.list}}
+                {{#unlessEq style '1'}}
+                    <div class="sider-nav-panel{{#eq sub_title ../curUserNav}} active{{/eq}}{{#if comments}} J-user-nav{{/if}}{{#eq sub_title 'mydeclare'}}{{#if ../config.isShowZzsb}}{{else}} djy-hide{{/if}}{{/eq}}">
+                        <a
+                            class="nav"
+                            href="{{#if link}}{{link}}{{else}}javascript:void(0);{{/if}}"
+                            {{#if linkId}}data-link="{{linkId}}"{{/if}}
+                            {{#eq target 8}}target="_blank"{{/eq}}
+                            data-cur="{{sub_title}}"
+                            >{{title}}
+                            {{#eq sub_title 'message'}}
+                                {{#gt config.commonSystemMessageData.totalNum 0}}<span class="djy-left-color">{{config.commonSystemMessageData.totalNum}}</span>{{/gt}}
+                            {{/eq}}
+                        </a>
+                        {{#if comments}}
+                        <div class="sider-nav-children">
+                            {{#each (objGet ../config.commonCmsDataNew comments 'list')}}
+                                {{#unlessEq style '1'}}
+                                    <a
+                                        {{#eq sub_title ../../curUserSubNav}}class="active"{{/eq}}
+                                        href="{{#if link}}{{link}}{{else}}javascript:void(0);{{/if}}"
+                                        {{#if linkId}}data-link="{{linkId}}"{{/if}}
+                                        {{#eq target 8}}target="_blank"{{/eq}}
+                                        data-cur="{{sub_title}}"
+                                        >{{title}}
+                                        {{#eq sub_title 'tradeinfo'}}
+                                            <span class="djy-left-color">{{#gt config.commonSystemMessageData.tradeNum 0}}{{config.commonSystemMessageData.tradeNum}}{{/gt}}</span>
+                                            {{else}}
+                                            <span class="djy-left-color">{{#gt config.commonSystemMessageData.sysNum 0}}{{config.commonSystemMessageData.sysNum}}{{/gt}}</span>
+                                        {{/eq}}
+                                    </a>
+                                {{/unlessEq}}
+                            {{/each}}
+                        </div>
+                        {{/if}}
+                    </div>
+                {{/unlessEq}}
+            {{/each}}
+        </div>
+    </div>
+    <div class="outer-link">
+        <div class="sider-nav-panel">
+            <a href="//i.{{config.baseURI}}/?fr=ipr_ucenter">我的猪八戒</a>
+        </div>
+    </div>
+</div>
+
+{{#content "js" mode="append"}}
+<script type="text/javascript">
+seajs.use('common-djy-pc:/partials/user/nav-need.less');
+</script>
+{{/content}}

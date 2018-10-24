@@ -1,0 +1,52 @@
+{
+    "packages": [
+        {
+            "packageName": "scaffold-orochi",
+            "packageVersion": "1.0",
+            "buildEnv": 1,
+            "buildType": 2
+        },
+        {
+            "packageName": "scaffold-web",
+            "packageVersion": "1.0",
+            "buildEnv": 1,
+            "buildType": 2
+        },
+        {
+            "packageName": "common-orochi-session",
+            "packageVersion": "1.0",
+            "buildEnv": 1,
+            "buildType": 2
+        },
+        {
+            "packageName": "common-ipr",
+            "packageVersion": "1.0",
+            "buildEnv": 1,
+            "buildType": 2
+        },
+        {
+            "packageName": "common-ipr-gulp",
+            "packageVersion": "1.0",
+            "buildEnv": 1,
+            "buildType": 2
+        },
+        {
+            "packageName": "common-ipr-pc",
+            "packageVersion": "1.1",
+            "buildEnv": 1,
+            "buildType": 2
+        },
+        {
+            "packageName": "common-ipr-api",
+            "packageVersion": "1.0",
+            "buildEnv": 1,
+            "buildType": 2
+        },
+        {
+            "packageName": "common-orochi-safe",
+            "packageVersion": "1.0",
+            "buildEnv": 1,
+            "buildType": 2
+        }
+    ]
+}

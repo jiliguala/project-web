@@ -1,0 +1,64 @@
+<div class="module-tool-right">
+  <ul class="right-list">
+    <li class="J-online online-chat">
+      <img src="{{mapNode "common-djy-pc:/partials/tool/right/img/pig.gif"}}" alt="在线顾问咨询" />
+      <p>在线顾问</p>
+      <span class="noread ">1</span>
+    </li>
+    <li>
+      <i class="icon icon-query"></i>
+      <div class="prompt-info free-check J-chance">
+        <div class="prompt-head">免费查询</div>
+        <i class="free-check-close"></i>
+        <div class="prompt-ul">
+          <span class="prompt-li selected" data-serviceid="1">商标</span>
+          <span class="prompt-li " data-serviceid="193">专利</span>
+          <span class="prompt-li " data-serviceid="44">版权</span>
+        </div>
+        <form class="prompt-inp" id="tool-right-chance">
+          <span class="inp-phone"></span>
+          <input type="text" name="mobile" placeholder="请输入您的手机号" maxlength="11">
+          <input type="hidden" name="service_id" value="1">
+          <input type="hidden" name="is_default" value="0">
+          <input type="hidden" name="sid" value="9">
+          <span class="mod-mobile">更换号码</span>
+        </form>
+        <div class="prompt-adc">免费通话</div>
+        {{#if config.commonCmsDataNew.tool-right.title}}
+        <span class="prompt-tel">联系电话：{{config.commonCmsDataNew.tool-right.title}}</span>
+        {{/if}}
+      </div>
+    </li>
+    <li class="J-qrode qrode-active">
+      <i class="icon icon-scan"></i>
+      <div class="prompt-info info-scan J-qrode">
+        {{#each config.commonCmsDataNew.tool-right-scan.list}}
+        <div class="scan-wrapper">
+          <img src="{{imgUrl}}" alt="{{alt}}" />
+          <p>{{comments}}<br>{{description}}</p>
+        </div>
+        {{/each}}
+        <i class="J-qrode-close close-qrode"></i>
+        <span class="scan-line"></span>
+      </div>
+    </li>
+    <li>
+      <a href="//marketing.jlgl.com/rpCenter?fr=zhishichanquan" target="_blank">
+        <i class="icon icon-center"></i>
+        <div class="prompt-info">领券中心</div>
+      </a>
+    </li>
+    <li id="J-feed" data-image="{{mapNode "common-djy-pc:/components/feed/img/code.jpg"}}">
+      <i class="icon icon-feed"></i>
+      <div class="prompt-info">意见反馈</div>
+    </li>
+    <li class="J-scroll-top djy-hide">
+      <i class="icon icon-top"></i>
+    </li>
+  </ul>
+</div>
+{{#content "js" mode="append"}}
+<script type="text/javascript">
+  seajs.use('common-djy-pc:/partials/tool/right/right-need.js');
+</script>
+{{/content}}

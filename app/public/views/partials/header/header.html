@@ -1,0 +1,187 @@
+<div class="djy-header">
+	<div class="djy-wrap">
+		<div class="header-left">
+			{{#eq curNav 'index'}}
+			<a data-link="1729" class="return-old" href="//djy.{{config.baseURI}}/old/" title="返回旧版首页">返回旧版首页
+				<span class="fg">|</span>
+			</a>
+			{{/eq}}
+			<div class="jlgl-link">
+				<a data-link="1255" href="//www.{{config.baseURI}}" title="猪八戒网">猪八戒网</a>旗下专业知识产权服务平台
+			</div>
+			<div class="hover-control">
+				<div class="hover-title">
+					<span class="fg">|</span>
+					<i class="icon-scan"></i>
+					<span class="des">关注八戒知识产权</span>
+				</div>
+				<div class="hover-panel">
+					{{#each config.commonCmsDataNew.top-qrcode.list}}
+					<div class="qrode-panel {{#eq @index 0}}qrode-first{{/eq}}">
+						<img src="{{imgUrl}}" alt="{{alt}}" />
+						<div class="right-info">
+							<strong>{{alt}}</strong>
+							<p>{{comments}}</p>
+						</div>
+					</div>
+					{{/each}}
+				</div>
+			</div>
+		</div>
+		<div class="header-right">
+			<div class="J-user user-wrap">
+				{{#if user.userId}}
+				<div class="hover-control user-info">
+					<a href="//djy.{{config.baseURI}}/user/" class="hover-title">
+						&nbsp;&nbsp;&nbsp;&nbsp;Hi，{{user.nickname}}
+						<i class="icon-arrow"></i>
+					</a>
+					<div class="hover-panel">
+						<div class="user-panel">
+							<a data-link="1266" class="user-avatar" href="//djy.{{config.baseURI}}/user/">
+								<img src="{{user.avatar}}" alt="头像" />
+							</a>
+							<p>
+								<a data-link="1267" class="user-name" href="//djy.{{config.baseURI}}/user/">{{user.nickname}}</a>
+								<a data-link="1274" class="sign-out" href="//login.{{config.baseURI}}/login/dologout/">退出</a>
+								<a
+									class="active-ad"
+									{{#if config.commonCmsDataNew.top-user-act.linkId}}data-link="{{config.commonCmsDataNew.top-user-act.linkId}}"{{/if}}
+									{{#eq config.commonCmsDataNew.top-user-act.target 8}}target="_blank"{{/eq}}
+									href="{{config.commonCmsDataNew.top-user-act.link}}"
+									title="{{config.commonCmsDataNew.top-user-act.alt}}"
+									>{{config.commonCmsDataNew.top-user-act.title}}</a>
+							</p>
+						</div>
+						<ul>
+							<li>
+								<a data-link="1269" href="//djy.{{config.baseURI}}/user/myorder/">
+									<span>
+										<i class="icon-order"></i>
+									</span>我的订单</a>
+							</li>
+							<li>
+								<a data-link="1270" href="//djy.{{config.baseURI}}/user/mycoupon/">
+									<span>
+										<i class="icon-coupon"></i>
+									</span>我的优惠券</a>
+							</li>
+							<li>
+								<a data-link="1271" href="//mywallet.{{config.baseURI}}/page/index/">
+									<span>
+										<i class="icon-balance"></i>
+									</span>我的余额</a>
+							</li>
+							<li>
+								<a data-link="1272" href="//djy.{{config.baseURI}}/user/">
+									<span>
+										<i class="icon-set"></i>
+									</span>账户设置</a>
+							</li>
+						</ul>
+						{{#if config.commonCmsDataNew.top-user-ad.imgUrl}}
+						<a
+							class="user-ad-panel"
+							href="{{config.commonCmsDataNew.top-user-ad.link}}"
+							title="{{config.commonCmsDataNew.top-user-ad.title}}"
+							{{#if config.commonCmsDataNew.top-user-ad.linkId}}data-link="{{config.commonCmsDataNew.top-user-ad.linkId}}"{{/if}}
+							{{#eq config.commonCmsDataNew.top-user-ad.target 8}}target="_blank"{{/eq}}
+							>
+							<img src="{{config.commonCmsDataNew.top-user-ad.imgUrl}}" alt="{{config.commonCmsDataNew.top-user-ad.alt}}" />
+						</a>
+						{{/if}}
+					</div>
+				</div>
+				<div class="hover-control">
+					<a href="//user.djy.{{config.baseURI}}/user/tradeinfo/" class="hover-title message">
+						消息
+						{{#gt config.commonSystemMessageData.totalNum 0}}<b class="notice">{{config.commonSystemMessageData.totalNum}}</b>{{/gt}}
+					</a>
+					<div class="hover-panel">
+						<a data-link="1264" href="//user.djy.{{config.baseURI}}/user/tradeinfo/" class="yellow">交易消息：
+							<span>{{#gt config.commonSystemMessageData.tradeNum 0}}{{config.commonSystemMessageData.tradeNum}}{{else}}0{{/gt}}</span>
+						</a>
+						<a data-link="1265" href="//djy.{{config.baseURI}}/user/systeminfo/" class="yellow">系统消息：
+							<span>{{#gt config.commonSystemMessageData.sysNum 0}}{{config.commonSystemMessageData.sysNum}}{{else}}0{{/gt}}</span>
+						</a>
+					</div>
+				</div>
+				{{else}}
+				<div class="user-login">
+					<i class="icon-user"></i>
+					<a data-link="1256" href="//login.{{config.baseURI}}/?fromurl={{encodeURI canonical}}">登录</a>
+					<span>/</span>
+					<a data-link="1257" href="//login.{{config.baseURI}}/register/?fromurl={{encodeURI canonical}}">注册</a>
+				</div>
+				{{/if}}
+			</div>
+			<a data-link="1258" href="//djy.{{config.baseURI}}/user/myorder/" class="order">
+				<span class="fg">|</span>我的订单</a>
+			<div class="hover-control">
+				<div class="hover-title">
+					<span class="fg">|</span>客户服务
+					<i class="icon-arrow"></i>
+				</div>
+				<div class="hover-panel">
+					{{#each config.commonCmsDataNew.top-god.list}}
+					<a
+						href="{{link}}"
+						{{#if linkId}}data-link="{{linkId}}"{{/if}}
+						{{#eq target 8}}target="_blank"{{/eq}}
+						>{{title}}</a>
+					{{/each}}
+				</div>
+			</div>
+			<div class="hover-control">
+				<a href="//djy.{{config.baseURI}}/user/sitemap/" class="hover-title">
+					<span class="fg">|</span>网站导航
+					<i class="icon-arrow"></i>
+				</a>
+				<div class="hover-panel">
+					<ul class="sitemap-service">
+						{{#each config.commonCmsDataNew.top-nav-word.list}}
+						<li {{#if style}}class="trademark"{{/if}}>
+							<h2>
+								<a
+									href="{{link}}"
+									{{#if linkId}}data-link="{{linkId}}"{{/if}}
+									{{#eq target 8}}target="_blank"{{/eq}}
+									title="{{title}}"
+									>{{title}}</a>
+							</h2>
+							{{#each (objGet ../config.commonCmsDataNew sub_title 'list')}}
+							{{#if ../sub_title}}
+							<a
+								href="{{link}}"
+								{{#if linkId}}data-link="{{linkId}}"{{/if}}
+								{{#eq target 8}}target="_blank"{{/eq}}
+								title="{{title}}"
+								>{{title}}
+								{{#if iconUrl}}<img src="{{iconUrl}}" />{{/if}}
+							</a>
+							{{/if}}
+							{{/each}}
+						</li>
+						{{/each}}
+					</ul>
+					<div class="sitemap-ad">
+						{{#each config.commonCmsDataNew.top-nav-pic.list}}
+						<a 
+							href="{{link}}"
+							{{#if linkId}}data-link="{{linkId}}"{{/if}}
+							{{#eq target 8}}target="_blank"{{/eq}}
+							title="{{title}}"
+							>
+							<img src="{{imgUrl}}" alt="{{alt}}" />
+						</a>
+						{{/each}}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{{#content "js" mode="append"}}
+<script type="text/javascript">
+	seajs.use('common-djy-pc:/partials/header/header-need.less');
+</script> {{/content}}

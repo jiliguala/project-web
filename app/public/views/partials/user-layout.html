@@ -1,0 +1,24 @@
+{{#extend "layout"}}
+    {{#content "body"}}
+        <div class="user-top">
+            <div class="top-auto">
+                <div class="avatar">
+                    <img src="{{user.avatar}}" alt="个人头像">
+                </div>
+                <div class="nickname">
+                    <p>{{user.nickname}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="user-center">
+            {{! 个人中心 导航条}}
+            {{#block "userNav"}}
+                {{{extend "user/nav"}}}
+            {{/block}}
+            <div class="user-content">
+                {{#block "userBody"}}
+                {{/block}}
+            </div>
+        </div>
+    {{/content}}
+{{/extend}}

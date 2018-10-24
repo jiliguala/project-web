@@ -1,0 +1,125 @@
+<div class="djy-footer">
+	<div class="djy-wrap">
+		<div class="footer-top">
+			<p>
+				<span>周一至周五：9:00 - 20:00</span>
+				<span>周六至周日：9:00 - 18:00</span>
+			</p>
+			<ul>
+				{{! 电话号码}}
+				{{#each config.commonCmsDataNew.pc-nav-bottom-tel.list}}
+                	<li>{{title}}</li>
+                {{/each}}
+			</ul>
+		</div>
+		<div class="footer-bottom">
+			<div class="bottom-left">
+				<ul>
+					{{! 知识产权保护}}
+					{{#if config.commonCmsDataNew.pc-nav-bottom-menu-1}}
+	                	<li class="titile-item">
+							<p>{{config.commonCmsDataNew.pc-nav-bottom-menu-1.title}}</p>
+							<ul>
+								{{#each config.commonCmsDataNew.pc-nav-bottom-menu-1.list}}
+								<li>
+									<a href="{{link}}" target="_blank"{{#if linkId}} data-link="{{linkId}}"{{/if}} title="">{{title}}</a>
+								</li>
+								{{/each}}
+							</ul>
+						</li>
+	                {{/if}}
+	                {{! 免费工具}}
+	                {{#if config.commonCmsDataNew.pc-nav-bottom-menu-2}}
+	                	<li class="titile-item">
+							<p>{{config.commonCmsDataNew.pc-nav-bottom-menu-2.title}}</p>
+							<ul>
+								{{#each config.commonCmsDataNew.pc-nav-bottom-menu-2.list}}
+								<li>
+									<a href="{{link}}" target="_blank"{{#if linkId}} data-link="{{linkId}}"{{/if}} title="">{{title}}</a>
+								</li>
+								{{/each}}
+							</ul>
+						</li>
+	                {{/if}}
+	                {{! 资讯内容}}
+	                {{#if config.commonCmsDataNew.pc-nav-bottom-menu-3}}
+	                	<li class="titile-item">
+							<p>{{config.commonCmsDataNew.pc-nav-bottom-menu-3.title}}</p>
+							<ul>
+								{{#each config.commonCmsDataNew.pc-nav-bottom-menu-3.list}}
+								<li>
+									<a href="{{link}}" target="_blank"{{#if linkId}} data-link="{{linkId}}"{{/if}} title="">{{title}}</a>
+								</li>
+								{{/each}}
+							</ul>
+						</li>
+	                {{/if}}
+	                {{! 加盟合作}}
+	                {{#if config.commonCmsDataNew.pc-nav-bottom-menu-4}}
+	                	<li class="titile-item">
+							<p>{{config.commonCmsDataNew.pc-nav-bottom-menu-4.title}}</p>
+							<ul>
+								{{#each config.commonCmsDataNew.pc-nav-bottom-menu-4.list}}
+								<li>
+									<a href="{{link}}" target="_blank"{{#if linkId}} data-link="{{linkId}}"{{/if}} title="">{{title}}</a>
+								</li>
+								{{/each}}
+							</ul>
+						</li>
+	                {{/if}}
+				</ul>
+				<ul class="about-list common-link">
+					{{! 关于我们}}
+					{{#each config.commonCmsDataNew.pc-nav-bottom.list}}
+	                	<li>
+	                		<a href="{{link}}"{{#if linkId}} data-link="{{linkId}}"{{/if}} target="_blank"{{#if alt}} title="{{alt}}"{{/if}}>{{title}}</a>
+	                	</li>
+	                {{/each}}
+				</ul>
+				{{! 友情链接}}
+				{{#if config.footerLink}}
+				<ul class="friend-link common-link">
+					{{#each config.footerLink.list}}
+						{{#if title}}
+						<li>
+							<a href="{{link}}" {{#if linkId}} data-link="{{linkId}}"{{/if}} target="_blank"{{#if alt}} title="{{alt}}"{{/if}}>{{title}}</a>
+						</li>
+						{{/if}}
+					{{/each}}
+				</ul>
+				{{/if}}
+				<p class="copyright">Copyright  2005-{{year}}<span>重庆猪八戒网络有限公司</span>版权所有 渝ICP备10202274号-7 渝B2-20080005</p>
+			</div>
+			<div class="bottom-right">
+				<ul class="media-list">
+					{{! 二维码区域}}
+					{{#each config.commonCmsDataNew.footer-qr-code-list.list}}
+	                	<li{{#if @index}} class="last"{{/if}}>
+	                		<img src="{{imgUrl}}"{{#if alt}} title="{{alt}}"{{/if}} title="{{title}}">
+							<p>{{title}}</p>
+	                	</li>
+	                {{/each}}
+				</ul>
+				<div class="show-list">
+					<a href="http://cms.zbjimg.com/zhubiaoju/certificate/sfdw.jpg" target="_blank" rel="nofollow">
+						<img src="{{mapNode "common-djy-pc:/partials/footer/img/zz8.jpg"}}"/>
+					</a>
+					<a href="http://cms.zbjimg.com/zhubiaoju/certificate/xhhy.jpg" target="_blank" rel="nofollow">
+						<img src="{{mapNode "common-djy-pc:/partials/footer/img/zz9.jpg"}}"/>
+					</a>
+					<a href="http://cms.zbjimg.com/zhubiaoju/certificate/sddw.jpg" target="_blank" rel="nofollow">
+						<img src="{{mapNode "common-djy-pc:/partials/footer/img/zz10.jpg"}}"/>
+					</a>
+					<a href="http://cms.zbjimg.com/zhubiaoju/certificate/bqbh.jpg" target="_blank" rel="nofollow">
+						<img src="{{mapNode "common-djy-pc:/partials/footer/img/zz11.jpg"}}"/>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{{#content "js" mode="append"}}
+<script type="text/javascript">
+seajs.use('common-djy-pc:/partials/footer/footer-need.less');
+</script>
+{{/content}}

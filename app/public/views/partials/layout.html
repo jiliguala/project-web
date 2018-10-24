@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{title}}</title>
+    <meta name="keywords" content="{{keywords}}"/>
+    <meta name="description" content="{{description}}"/>
+    <link rel="canonical" href="{{canonical}}"/>
+    {{! 站点必须的meta申明}}
+    {{#block "site-meta"}}
+        <link rel="shortcut icon" href="//as.zbjimg.com/static/as-djy-www/common/default/faviconipr.ico" type="image/x-icon"/>
+        <meta name="sogou_site_verification" content="FZAELF2JN9"/>
+        <meta name="360-site-verification" content="2d807cc45e42665e812d541bfb06ef01" />
+        <meta name="baidu-site-verification" content="IppzFTTD31" />
+    {{/block}}
+    {{! meta自定义}}
+    {{#block "meta"}}{{/block}}
+
+    {{! 提前必须依赖的js文件}}
+    {{#block "pre-js"}}
+        {{{extend "global/pre-js"}}}
+    {{/block}}
+
+    {{! 引入seajs map映射文件，seajs文件必须在此文件之前引入}}
+    {{{mapConfig}}}
+
+    {{! 引入全局css文件}}
+    {{#block "common-css"}}
+        {{{extend "global/common-css"}}}
+    {{/block}}
+
+    {{! 其它css文件可在此区域中引入}}
+    {{#block "css"}}
+    {{/block}}
+
+    {{! 页面级别css文件，程序自动引入}}
+    {{#block "map-css"}}
+        {{{extend "global/map-css"}}}
+    {{/block}}
+</head>
+
+<body>
+    {{! 加载提示蒙层}}
+    {{#block "loading"}}
+        {{{extend "loading/loading"}}}
+    {{/block}}
+
+    {{! 头部工具条}}
+    {{#block "header"}}
+        {{{extend "header/header"}}}
+    {{/block}}
+
+    {{! 头部机会提交}}
+    {{#block "top_chance"}}
+        <div class="top-chance-cont">
+            <div class="djy-wrap">
+                {{{extend "top/logo/logo"}}}
+                {{{extend "top/chance/chance"}}}
+            </div>
+        </div>
+    {{/block}}
+
+    {{! 头部导航条}}
+    {{#block "nav"}}
+        {{{extend "nav/nav"}}}
+    {{/block}}
+
+    {{! 全站右侧广告位}}
+    {{#block "right_ads"}}
+    {{/block}}
+
+    {{! 中间内容区域}}
+    <div class="djy-content">
+        {{#block "body"}}
+        {{/block}}
+    </div>
+
+    {{! 底部}}
+    {{#block "footer"}}
+        {{{extend "footer/footer"}}}
+    {{/block}}
+
+    {{! 右侧}}
+    {{#block "right"}}
+        {{{extend "tool/right/right"}}}
+    {{/block}}
+
+    {{! 其它区域}}
+    {{#block "other"}}
+    {{/block}}
+
+    {{! 引入全局js文件}}
+    {{#block "common-js"}}
+        {{{extend "global/common-js"}}}
+    {{/block}}
+
+    {{! 其它js文件可在此区域中引入}}
+    {{#block "js"}}
+        {{{extend "global/other-js"}}}
+    {{/block}}
+
+    {{! 页面级别js文件，程序自动引入}}
+    {{#block "map-js"}}
+        {{{extend "global/map-js"}}}
+    {{/block}}
+</body>
+
+</html>

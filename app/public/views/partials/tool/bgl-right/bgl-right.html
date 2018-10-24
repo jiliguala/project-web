@@ -1,0 +1,25 @@
+{{#if config.commonCmsDataBgl.bgl-online}}
+<div class="module-tool-right">
+  <ul class="rightconsultlist">
+    <li class="listc">
+      <a href="javaScript:;" class="J-online"></a>
+    </li>
+    {{#each config.commonCmsDataBgl.bgl-online.list}}
+    {{#gt 6 @index}}
+    <li class="listc">
+      <a href="javaScript:;" class="J-online" data-link="{{linkId}}">
+        <input type="hidden" name="linksrc" value="{{link}}">
+        <img src="{{imgUrl}}" class="normalSw" alt="{{alt}}" />
+        <img src="{{iconUrl}}" class="hoverSw" alt="{{alt}}" />
+      </a>
+    </li>
+    {{/gt}}
+    {{/each}}
+  </ul>
+</div>
+{{/if}}
+{{#content "js" mode="append"}}
+<script type="text/javascript">
+  seajs.use('common-djy-pc:/partials/tool/bgl-right/bgl-right-need.js');
+</script>
+{{/content}}
